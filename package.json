@@ -1,0 +1,18 @@
+{
+  "name": "remove-whitespace",
+  "main": "./lib/remove-whitespace",
+  "version": "0.0.0",
+  "description": "remove whitespace in the selected text",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "remove-whitespace:remove"
+  },
+  "repository": "https://github.com/nkmk/atom-remove-whitespace",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
