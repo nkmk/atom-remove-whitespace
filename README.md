@@ -2,6 +2,14 @@
 
 Remove whitespace in the selected text.
 
+```
+aa bb   c c  dd
+
+=>
+
+aabbccdd
+```
+
 ## Keymap
 
 No keymap by default.
