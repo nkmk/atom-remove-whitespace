@@ -1,10 +1,9 @@
 {
   "name": "remove-whitespace",
   "main": "./lib/remove-whitespace",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "remove whitespace in the selected text",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "remove-whitespace:remove"
   },
@@ -13,6 +12,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
