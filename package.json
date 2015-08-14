@@ -1,7 +1,7 @@
 {
   "name": "remove-whitespace",
   "main": "./lib/remove-whitespace",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Remove, shrink, replace whitespace in the selected text",
   "keywords": [],
   "activationCommands": {
