@@ -2,28 +2,24 @@
 
 module.exports = RemoveWhitespace =
   subscriptions: null
-  originalString: ""
-  removedString: ""
+
+  config:
+    insertString:
+      type: 'string'
+      default: '-'
 
   activate: ->
     @subscriptions = new CompositeDisposable
 
-    @subscriptions.add atom.commands.add 'atom-workspace', 'remove-whitespace:remove': => @remove()
+    @subscriptions.add atom.commands.add 'atom-workspace',
+      'remove-whitespace:remove': => @replace(/\s+/g, ''),
+      'remove-whitespace:shrink': => @replace(/\s+/g, ' '),
+      'remove-whitespace:replace': => @replace(/\s+/g, atom.config.get('remove-whitespace.insertString'))
 
   deactivate: ->
     @subscriptions.dispose()
 
-  remove: ->
+  replace: (regexp, str) ->
     if editor = atom.workspace.getActiveTextEditor()
       selection = editor.getSelectedText()
-      newString = ""
-
-      if @removedString is selection
-        newString = @originalString
-      else
-        @originalString = selection
-        @removedString = @originalString.replace(/\s+/g, "")
-        newString = @removedString
-
-      editor.insertText(newString)
-      editor.selectLeft(newString.length)
+      editor.insertText(selection.replace(regexp, str))
