@@ -21,5 +21,7 @@ module.exports = RemoveWhitespace =
 
   replace: (regexp, str) ->
     if editor = atom.workspace.getActiveTextEditor()
-      selection = editor.getSelectedText()
-      editor.insertText(selection.replace(regexp, str))
+      selections = editor.getSelections()
+      for selection in selections
+        text = selection.getText()
+        selection.insertText(text.replace(regexp, str))
